@@ -198,13 +198,7 @@ class mstra extends Plugin
         $response = curl_exec($curl);
 
         curl_close($curl);
-	    try {
-    $output = json_decode(curl_exec($curl), true)[0]["translations"][0]["text"];
-} catch (Exception $e) {
-   $output = $contentvalue;
-}
-       
-
+    $output = json_decode(curl_exec($curl), true)[0]["translations"][0]["text"];    
         curl_close($curl);
 
         return $output;
@@ -214,10 +208,6 @@ class mstra extends Plugin
     {
         $output = $this->send_request($article["title"]);
         $article["title"] = $output;
-
-        $output = $this->send_request($article["content"]);
-        $article["content"] = $output;
-
         return $article;
     }
 
