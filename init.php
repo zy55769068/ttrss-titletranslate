@@ -198,7 +198,12 @@ class mstra extends Plugin
         $response = curl_exec($curl);
 
         curl_close($curl);
-        $output = json_decode(curl_exec($curl), true)[0]["translations"][0]["text"];
+	    try {
+    $output = json_decode(curl_exec($curl), true)[0]["translations"][0]["text"];
+} catch (Exception $e) {
+   $output = $contentvalue;
+}
+       
 
         curl_close($curl);
 
