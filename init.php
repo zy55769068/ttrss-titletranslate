@@ -183,7 +183,7 @@ class mstra extends Plugin
         $headers[] = 'Content-Type: application/json; charset=UTF-8';
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html',
+            CURLOPT_URL => 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&textType=html',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
