@@ -195,7 +195,15 @@ class mstra extends Plugin
             CURLOPT_HTTPHEADER => $headers,
         ));
 	try{
-	    $output = json_decode(curl_exec($curl), true)[0]["translations"][0]["text"];
+	    $curlresult = json_decode(curl_exec($curl), true);
+	    if(curlresult.length > 0)
+	    {
+		$output = $curlresult[0]["translations"][0]["text"];    
+	    }
+	    else{
+		    $output = $contentvalue;
+	    }
+	   
 	}catch (Exception $e) {
 	    $output = $contentvalue;
 	}
