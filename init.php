@@ -208,6 +208,7 @@ class mstra extends Plugin
     {
         $output = $this->send_request($article["title"]);
         $article["title"] = $output;
+	$article["content"] = $article["content"];
         return $article;
     }
 
