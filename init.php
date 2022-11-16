@@ -196,7 +196,7 @@ class mstra extends Plugin
         ));
 	try{
 	    $curlresult = json_decode(curl_exec($curl), true);
-	    if(curlresult.length > 0)
+	    if($curlresult.length > 0)
 	    {
 		$output = $curlresult[0]["translations"][0]["text"];    
 	    }
